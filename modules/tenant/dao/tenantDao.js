@@ -45,7 +45,7 @@ exports.fetchDetails = async (apiReference, opts, getCount = false) => {
   }
 
   if (opts.tenant_id) {
-    query += " AND tenant_id = ?";
+    query += ` AND tenant_id ${opts.tenant_id ? "IN(?)" : "=?"}`;
     values.push(opts.tenant_id);
   }
 

@@ -4,15 +4,15 @@
     "mysql": {
       "master": {
         "host": "localhost",
-        "user": "admin",
-        "password": "n3Tw0rK_oN",
-        "database": "roofus"
+        "user": "",
+        "password": "",
+        "database": ""
       },
       "slave": {
         "host": "localhost",
-        "user": "admin",
-        "password": "n3Tw0rK_oN",
-        "database": "roofus"
+        "user": "",
+        "password": "",
+        "database": ""
       }
     }
   }
