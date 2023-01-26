@@ -1,0 +1,19 @@
+{
+  "PORT": "8060",
+  "databaseSettings": {
+    "mysql": {
+      "master": {
+        "host": "localhost",
+        "user": "admin",
+        "password": "n3Tw0rK_oN",
+        "database": "roofus"
+      },
+      "slave": {
+        "host": "localhost",
+        "user": "admin",
+        "password": "n3Tw0rK_oN",
+        "database": "roofus"
+      }
+    }
+  }
+}
