@@ -1,0 +1,19 @@
+{
+  "PORT": "8060",
+  "databaseSettings": {
+    "mysql": {
+      "master": {
+        "host": "localhost",
+        "user": "",
+        "password": "",
+        "database": ""
+      },
+      "slave": {
+        "host": "localhost",
+        "user": "",
+        "password": "",
+        "database": ""
+      }
+    }
+  }
+}

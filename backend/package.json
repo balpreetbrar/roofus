@@ -1,0 +1,26 @@
+{
+  "name": "roofus-open-house",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "set NODE_ENV=test node tests/index.js",
+    "start": "set NODE_ENV=test node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.1",
+    "brotli": "^1.3.3",
+    "config": "^3.3.9",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "jsonwebtoken": "^9.0.0",
+    "moment": "^2.29.4",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.0.1",
+    "underscore": "^1.13.6"
+  }
+}
