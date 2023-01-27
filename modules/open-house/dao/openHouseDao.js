@@ -33,7 +33,7 @@ exports.fetchDetails = async(apiReference, opts, getCount = false) => {
   let joinString = "";
 
   if (opts.fetch_property_details) {
-    columns += ", prop.name as property_name, prop.address, prop.details, prop.images, prop.rooms, prop.size";
+    columns += ", prop.name as property_name, prop.address";
     joinString += " INNER JOIN tb_properties prop ON prop.property_id = oh.property_id ";
   }
 
