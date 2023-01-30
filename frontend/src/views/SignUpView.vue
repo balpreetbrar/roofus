@@ -29,7 +29,7 @@ export default {
           phone_number: this.phone_number
 
         })
-        .then(() => { this.$router.push({ name: 'propertylist' }) })
+        .then(() => { this.$router.push({ name: 'login' }) })
         .catch((err: any) => { this.status = err.response.status })
     }
   }
