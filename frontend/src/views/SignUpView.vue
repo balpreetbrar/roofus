@@ -20,15 +20,7 @@ export default {
 
   methods: {
     register() {
-      this.$store
-        .dispatch('register', {
-          name: this.name,
-          email: this.email,
-          password: this.password,
-          country_code: this.country_code,
-          phone_number: this.phone_number
-
-        })
+     
         .then(() => { this.$router.push({ name: 'login' }) })
         .catch((err: any) => { this.status = err.response.status })
     }
