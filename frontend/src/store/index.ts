@@ -31,7 +31,7 @@ export default createStore({
       return axios
         .post(baseURL+"admin/register", credentials)
         .then(({ data }) => {
-          commit("SET_USER_DATA", data);
+          //commit("SET_USER_DATA", data);
         });
     },
     login({ commit }, credentials) {
