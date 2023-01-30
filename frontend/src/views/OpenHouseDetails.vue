@@ -74,10 +74,10 @@ export default {
 
     <div class="relative flex flex-1 flex-col items-center justify-center pt-12 pb-16">
         <v-row justify="center">
-            <v-dialog v-model="dialog" persistent>
+            <v-dialog v-model="dialog" persistent max-width="500px">
                 <template v-slot:activator="{ props }">
                     <v-btn color="primary" v-bind="props">
-                        Create Open House
+                        Enroll Tenants
                     </v-btn>
                 </template>
                 <v-card>
@@ -105,8 +105,8 @@ export default {
 
 
                             <button block @click="dialog = false"
-                                class="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 w-full">Create
-                                Enroll User to Open House</button>
+                                class="inline-flex justify-center rounded-lg text-sm font-semibold py-2.5 px-4 bg-slate-900 text-white hover:bg-slate-700 w-full">
+                                Enroll Tenants to Open House</button>
                         </form>
                         <v-card-actions>
                             <v-btn color="primary" block @click="dialog = false">Close Dialog</v-btn>
@@ -123,7 +123,7 @@ export default {
 
             <li class="px-6 py-2 border-b border-gray-200 w-full rounded-t-lg" v-for="(item, index) in items">
 
-                <h1>Visitor Amount: {{ item.visitor_amount }}</h1> {
+                <h1>Visitor Amount: {{ item.visitor_amount }}</h1> 
                 <h1>Property ID {{ item.property_id }}</h1>
                 <h1>Start Date {{ item.start_date }}</h1>
 

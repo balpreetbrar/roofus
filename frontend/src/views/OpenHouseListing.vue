@@ -81,6 +81,8 @@ export default {
                     class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     Remove
                 </button>
+               <p class="assign-user"> <router-link :to="'/openhouse/' + item.id">Assign Tenants</router-link></p>
+
             </li>
         </ul>
     </div>
@@ -98,5 +100,9 @@ export default {
 .box-border {
     border: 1px solid #d3d3d3;
     border-radius: 10px;
+}
+.assign-user{
+color: #1394ff;
+padding: 10px;
 }
 </style>
