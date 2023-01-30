@@ -71,7 +71,7 @@ export default {
           v-model="phone_number" placeholder="Enter phone number" required />
 
       </div>
-      <div>
+      <div style="display:none">
         <input v-model="country_code" type="text" />
 
       </div>
