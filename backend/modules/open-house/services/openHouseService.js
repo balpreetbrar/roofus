@@ -167,6 +167,13 @@ exports.enroll = async (apiReference, opts) => {
     return authoriseOpenHouse;
   }
 
+  authoriseOpenHouse = authoriseOpenHouse.data[0];
+
+  if (Number(authoriseOpenHouse.visitor_amount) < opts.tenant_id.length) {
+    response.error = "Cannot enroll more than " + authoriseOpenHouse.visitor_amount + " tenants!";
+    return response;
+  }
+
   let validateTenants = await tenantService.authTenant(apiReference, {
     tenant_id   : opts.tenant_id,
     user_id     : opts.user_id
