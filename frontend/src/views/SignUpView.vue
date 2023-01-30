@@ -19,6 +19,25 @@ export default {
   },
 
   methods: {
+   login() {
+      this.$store
+        .dispatch('login', {
+          email: this.email,
+          password: this.password
+        })
+        .then(() => { this.$router.push({ name: 'propertylist' }) })
+        .catch((err: any) => {
+          this.status = err.response.status
+          console.log(err.response.status)
+          if (err.response.status === 503) {
+            alert('Service unavailable, Please try again later')
+          }
+          if (err.response.status === 401) {
+            alert('Invalid Credentials!')
+          }
+
+        })
+    },
     register() {
       this.$store
         .dispatch('register', {
@@ -29,7 +48,11 @@ export default {
           phone_number: this.phone_number
 
         })
-        .then(() => { this.$router.push({ name: 'login' }) })
+        .then(() => {
+        
+       this.login();
+        
+         })
         .catch((err: any) => { this.status = err.response.status })
     }
   }

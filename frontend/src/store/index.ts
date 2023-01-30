@@ -30,9 +30,6 @@ export default createStore({
     register({ commit }, credentials) {
       return axios
         .post(baseURL+"admin/register", credentials)
-        .then(({ data }) => {
-          //commit("SET_USER_DATA", data);
-        });
     },
     login({ commit }, credentials) {
       return axios
