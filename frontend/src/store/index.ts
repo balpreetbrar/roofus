@@ -1,7 +1,8 @@
 
 import axios from "axios";
 import { createStore } from "vuex";
-
+//@ts-ignore
+import baseURL from '../api/url'
 
 export default createStore({
   state: {
@@ -28,14 +29,14 @@ export default createStore({
   actions: {
     register({ commit }, credentials) {
       return axios
-        .post("https://api-angad.networkon.in/roofus/admin/register", credentials)
+        .post(baseURL+"admin/register", credentials)
         .then(({ data }) => {
           commit("SET_USER_DATA", data);
         });
     },
     login({ commit }, credentials) {
       return axios
-        .post("https://api-angad.networkon.in/roofus/admin/login", credentials)
+        .post(baseURL+"admin/login", credentials)
         .then(({ data }) => {
           commit("SET_USER_DATA", data);
         });

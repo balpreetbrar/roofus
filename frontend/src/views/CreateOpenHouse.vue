@@ -1,5 +1,7 @@
 <script lang="ts" >
 import axios from "axios"
+import baseURL from '../api/url'
+
 export default {
 
     data() {
@@ -17,7 +19,7 @@ export default {
         userData = JSON.parse(userData)
         let token = userData.data.access_token
         axios
-            .get('https://api-angad.networkon.in/roofus/property/list?limit=10&skip=0', { headers: { "access_token": ` ${token}` } })
+            .get(baseURL+'property/list?limit=10&skip=0', { headers: { "access_token": ` ${token}` } })
             .then((response: any) => this.property = response.data.data)
     }, methods: {
         createOpenHouse: function () {
@@ -25,7 +27,7 @@ export default {
             userData = JSON.parse(userData)
             let token = userData.data.access_token
             axios
-                .post('https://api-angad.networkon.in/roofus/openHouse/create', {
+                .post(baseURL+'openHouse/create', {
                     visitor_amount: this.visitor_amount,
                     start_date: this.start_date,
                     property_id: this.selected

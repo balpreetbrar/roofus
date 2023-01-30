@@ -1,6 +1,7 @@
 <script lang="ts" >
 import CreateProperty from './CreateProperty.vue';
 import axios from 'axios';
+import baseURL from '../api/url'
 export default {
     components: {
         CreateProperty
@@ -21,7 +22,7 @@ export default {
             // console.log(userData)
             let token = userData.data.access_token
             axios
-                .get(`https://api-angad.networkon.in/roofus/property/list?limit=10&skip=0`, { headers: { "access_token": ` ${token}` } })
+                .get(baseURL+`property/list?limit=10&skip=0`, { headers: { "access_token": ` ${token}` } })
                 .then((response: any) => (this.items = response.data.data))
         },
 
@@ -29,7 +30,7 @@ export default {
             let userData: any = localStorage.getItem("user");
             userData = JSON.parse(userData)
             let token = userData.data.access_token
-            axios.put('https://api-angad.networkon.in/roofus/property/remove', { property_id: property_id }, { headers: { "access_token": ` ${token}` } })
+            axios.put(baseURL+'property/remove', { property_id: property_id }, { headers: { "access_token": ` ${token}` } })
                 .then((response: any) => {
                     if (response.status === 200) {
                         alert('Successfully propery removed')

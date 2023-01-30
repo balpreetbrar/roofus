@@ -2,7 +2,7 @@
 import CreateOpenHouse from './CreateOpenHouse.vue';
 import axios from 'axios';
 import { h, ref, onUpdated } from 'vue'
-
+import baseURL from '../api/url'
 export default {
     components: {
         CreateOpenHouse
@@ -27,7 +27,7 @@ export default {
             let userData: any = localStorage.getItem("user");
             userData = JSON.parse(userData)
             let token = userData.data.access_token
-            axios.put('https://api-angad.networkon.in/roofus/openHouse/remove', { id: id }, { headers: { "access_token": ` ${token}` } })
+            axios.put(baseURL+'openHouse/remove', { id: id }, { headers: { "access_token": ` ${token}` } })
                 .then((response: any) => {
                     if (response.status === 200) {
                         alert('Successfully Removed Open House');
@@ -42,7 +42,7 @@ export default {
             userData = JSON.parse(userData)
             let token = userData.data.access_token
             axios
-                .get('https://api-angad.networkon.in/roofus/openHouse/list?limit=10&skip=0&fetch_property_details=true', { headers: { "access_token": ` ${token}` } })
+                .get(baseURL+'openHouse/list?limit=10&skip=0&fetch_property_details=true', { headers: { "access_token": ` ${token}` } })
                 // .then((response: any) => this.items = (response.data.data))
                 .then((response) => {
 

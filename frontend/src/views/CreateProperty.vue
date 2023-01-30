@@ -1,5 +1,7 @@
 <script lang="ts">
 import axios from "axios"
+import baseURL from '../api/url'
+
 export default {
     data() {
         return {
@@ -19,7 +21,7 @@ export default {
             userData = JSON.parse(userData)
             let token = userData.data.access_token
             axios
-                .post('https://api-angad.networkon.in/roofus/property/create', {
+                .post(baseURL+'property/create', {
                     name: this.name,
                     address: this.address,
 

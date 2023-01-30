@@ -1,5 +1,6 @@
 <script lang="ts" >
 import axios from 'axios';
+import baseURL from '../api/url'
 // import Multiselect from 'vue-multiselect';
 export default {
 
@@ -23,10 +24,10 @@ export default {
         let token = userData.data.access_token
 
         axios
-            .get(`https://api-angad.networkon.in/roofus/openHouse/details?id=${this.$route.params.id}`, { headers: { "access_token": ` ${token}` } })
+            .get(baseURL+`openHouse/details?id=${this.$route.params.id}`, { headers: { "access_token": ` ${token}` } })
             .then((response: any) => this.items = response.data.data.data)
         axios
-            .get('https://api-angad.networkon.in/roofus/tenant/list?limit=10&skip=0', { headers: { "access_token": ` ${token}` } })
+            .get(baseURL+'tenant/list?limit=10&skip=0', { headers: { "access_token": ` ${token}` } })
             .then((response: any) => {
                 console.log(response.data.data)
                 let responseArray = response.data.data
@@ -48,7 +49,7 @@ export default {
             userData = JSON.parse(userData)
             let token = userData.data.access_token
 
-            axios.post('https://api-angad.networkon.in/roofus/openHouse/enroll', {
+            axios.post(baseURL+'openHouse/enroll', {
 
                 open_house_id: Number(this.$route.params.id),
                 tenant_id: this.value

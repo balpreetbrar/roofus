@@ -2,6 +2,8 @@
 import AddUser from './AddUser.vue';
 import axios from 'axios';
 import { h, ref, onUpdated } from 'vue'
+import baseURL from '../api/url'
+
 export default {
     components: {
         AddUser,
@@ -28,7 +30,7 @@ export default {
             let userData: any = localStorage.getItem("user");
             userData = JSON.parse(userData)
             let token = userData.data.access_token
-            axios.put('https://api-angad.networkon.in/roofus/tenant/remove', { tenant_id: tenant_id }, { headers: { "access_token": ` ${token}` } })
+            axios.put(baseURL+'tenant/remove', { tenant_id: tenant_id }, { headers: { "access_token": ` ${token}` } })
                 .then((response: any) => {
                     if (response.status === 200) {
                         alert('Tenant Successfully Removed')
@@ -49,7 +51,7 @@ export default {
             // console.log(userData)
             let token = userData.data.access_token
             axios
-                .get('https://api-angad.networkon.in/roofus/tenant/list?limit=10&skip=0'
+                .get(baseURL+'tenant/list?limit=10&skip=0'
 
                     , { headers: { "access_token": ` ${token}` } })
                 .then((response: any) => this.items = response.data.data)
